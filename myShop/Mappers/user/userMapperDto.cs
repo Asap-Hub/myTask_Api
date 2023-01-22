@@ -9,6 +9,7 @@ namespace myShop.Api.Mappers.user
         public userMapperDto()
         {
             CreateMap<CreateUserDto, TblAccount>().ReverseMap();
-        }
+            CreateMap<loginDto, TblAccount>().ReverseMap();
+        }                                                       
     }
 }

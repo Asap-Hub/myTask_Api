@@ -35,7 +35,7 @@ namespace myShop.Application.Command.User
             FormattableString sql = $"EXEC  [dbo].[spCreateAccount] @firstName = {data.FirstName}, @secondName = {data.SecondName}, @userName = {data.UserName}, @gender = {data.Gender}, @countryName = {data.CountryName}, @firstPassword = {data.FirstPassword}, @confirmPassword = {data.ConfirmPassword}";
 
             var result = await _repository.Add(sql);
-            return result;
+              return result;
 
         }
     }

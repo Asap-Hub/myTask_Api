@@ -22,7 +22,7 @@ namespace myShop.Infrastructure.Persistence.Repositories
         public async Task<int> Add(FormattableString sqlQuery)
         {
             var result = await _dbContext.Database.SqlQuery<int>(sqlQuery).ToListAsync();
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(); 
             return result.FirstOrDefault();
         }
 

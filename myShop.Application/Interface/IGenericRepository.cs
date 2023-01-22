@@ -8,7 +8,7 @@ namespace myShop.Application.Interface
 {
     public interface IGenericRepository<TEntity> where TEntity: class 
     {
-        Task<TEntity> Add(FormattableString sqlQuery);
+        Task<int> Add(FormattableString sqlQuery);
 
         Task<int> Update(FormattableString sqlQuery);
 

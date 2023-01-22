@@ -29,27 +29,27 @@ public partial class MyShopContext : DbContext
                 .HasNoKey()
                 .ToTable("tblAccount");
 
-            entity.Property(e => e.ConfirmPassword).HasColumnName("confirmPassword");
-            entity.Property(e => e.CountryName)
-                .HasMaxLength(255)
-                .HasColumnName("countryName");
-            entity.Property(e => e.FirstName)
-                .HasMaxLength(255)
-                .HasColumnName("firstName");
-            entity.Property(e => e.FirstPassword).HasColumnName("firstPassword");
-            entity.Property(e => e.Gender)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("gender");
-            entity.Property(e => e.SecondName)
-                .HasMaxLength(255)
-                .HasColumnName("secondName");
-            entity.Property(e => e.UserId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("UserID");
-            entity.Property(e => e.UserName)
-                .HasMaxLength(255)
-                .HasColumnName("userName");
+            //entity.Property(e => e.ConfirmPassword).HasColumnName("confirmPassword");
+            //entity.Property(e => e.CountryName)
+            //    .HasMaxLength(255)
+            //    .HasColumnName("countryName");
+            //entity.Property(e => e.FirstName)
+            //    .HasMaxLength(255)
+            //    .HasColumnName("firstName");
+            //entity.Property(e => e.FirstPassword).HasColumnName("firstPassword");
+            //entity.Property(e => e.Gender)
+            //    .HasMaxLength(50)
+            //    .IsUnicode(false)
+            //    .HasColumnName("gender");
+            //entity.Property(e => e.SecondName)
+            //    .HasMaxLength(255)
+            //    .HasColumnName("secondName");
+            //entity.Property(e => e.UserId)
+            //    .ValueGeneratedOnAdd()
+            //    .HasColumnName("UserID");
+            //entity.Property(e => e.UserName)
+            //    .HasMaxLength(255)
+            //    .HasColumnName("userName");
         });
 
         OnModelCreatingPartial(modelBuilder);

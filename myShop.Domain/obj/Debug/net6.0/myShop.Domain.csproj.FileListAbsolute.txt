@@ -1,0 +1,14 @@
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.deps.json
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.runtimeconfig.json
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.pdb
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.csproj.AssemblyReference.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.AssemblyInfoInputs.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.AssemblyInfo.cs
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.csproj.CoreCompileInputs.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\refint\myShop.Domain.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.pdb
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.genruntimeconfig.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Domain\obj\Debug\net6.0\ref\myShop.Domain.dll

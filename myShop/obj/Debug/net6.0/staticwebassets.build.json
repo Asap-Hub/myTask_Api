@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "N4/R/SGlD7nhXPAaoLLhd/6y2QE2INH+crbdvLHweUk=",
+  "Source": "myShop.Api",
+  "BasePath": "_content/myShop.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

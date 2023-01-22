@@ -1,0 +1,17 @@
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\bin\Debug\net6.0\myShop.Application.deps.json
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\bin\Debug\net6.0\myShop.Application.runtimeconfig.json
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\bin\Debug\net6.0\myShop.Application.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\bin\Debug\net6.0\myShop.Application.pdb
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\bin\Debug\net6.0\myShop.Domain.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\bin\Debug\net6.0\myShop.Domain.pdb
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.csproj.AssemblyReference.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.GeneratedMSBuildEditorConfig.editorconfig
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.AssemblyInfoInputs.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.AssemblyInfo.cs
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.csproj.CoreCompileInputs.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.csproj.CopyComplete
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\refint\myShop.Application.dll
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.pdb
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\myShop.Application.genruntimeconfig.cache
+G:\Innorik\Codes\Public\myShop\myShop\myShop.Application\obj\Debug\net6.0\ref\myShop.Application.dll

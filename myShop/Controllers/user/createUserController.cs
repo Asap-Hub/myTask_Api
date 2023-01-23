@@ -6,7 +6,7 @@ using myShop.Application.Dto.User;
 namespace myShop.Api.Controllers.user
 {
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
 
     public class createUserController : Controller
     {

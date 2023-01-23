@@ -7,7 +7,7 @@ namespace myShop.Api.Controllers.user
 {
 
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     public class loginController : Controller
     {
         private readonly IMediator mediator;

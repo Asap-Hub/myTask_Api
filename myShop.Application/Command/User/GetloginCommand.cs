@@ -29,9 +29,7 @@ namespace myShop.Application.Command.User
             _repository = repository;
         }
         public async Task<TblAccount> Handle(GetloginCommand request, CancellationToken cancellationToken)
-        { 
-            //var entity = new TblAccount();
-            //var data = _mapper.Map(dto, entity);
+        {  
             FormattableString sql = $"EXEC  [dbo].[spLogUserIN] @userName = {request.userName}, @firstPassword = {request.firstPassword},@confirmPassword = {request.confirmPassword}";
 
             var login = await _repository.Get(sql);

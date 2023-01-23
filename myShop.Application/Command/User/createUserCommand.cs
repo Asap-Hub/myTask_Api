@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace myShop.Application.Command.User
 {
+     
     public class createUserCommand: IRequest<int>
     {
         public CreateUserDto createUserDto { get; set; }
@@ -32,7 +33,7 @@ namespace myShop.Application.Command.User
             var dto = request.createUserDto;
             var entity = new TblAccount();
             var data = _mapper.Map(dto, entity);
-            FormattableString sql = $"EXEC  [dbo].[spCreateAccount] @firstName = {data.FirstName}, @secondName = {data.SecondName}, @userName = {data.UserName}, @gender = {data.Gender}, @countryName = {data.CountryName}, @firstPassword = {data.FirstPassword}, @confirmPassword = {data.ConfirmPassword}";
+            FormattableString sql = $"EXEC  [dbo].[spCreateAccount] @firstName = {data.FirstName}, @secondName = {data.SecondName}, @userName = {data.UserName}, @email = {data.email}, @gender = {data.Gender}, @countryName = {data.CountryName}, @firstPassword = {data.FirstPassword}, @confirmPassword = {data.ConfirmPassword}";
 
             var result = await _repository.Add(sql);
               return result;

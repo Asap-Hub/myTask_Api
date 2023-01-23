@@ -12,6 +12,7 @@ public partial class TblAccount
     public string SecondName { get; set; } = null!;
 
     public string UserName { get; set; } = null!;
+    public string email { get; set; } = null!;
 
     public string Gender { get; set; } = null!;
 
@@ -19,5 +20,5 @@ public partial class TblAccount
 
     public string FirstPassword { get; set; } = null!;
 
-    public string ConfirmPassword { get; set; } = null!;
+    public string ConfirmPassword { get; set; } = null!; 
 }

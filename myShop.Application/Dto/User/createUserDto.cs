@@ -13,6 +13,7 @@ namespace myShop.Application.Dto.User
         public string SecondName { get; set; } = null!;
 
         public string UserName { get; set; } = null!;
+        public string email { get; set; } = null!;
 
         public string Gender { get; set; } = null!;
 
@@ -20,6 +21,6 @@ namespace myShop.Application.Dto.User
 
         public string FirstPassword { get; set; } = null!;
 
-        public string ConfirmPassword { get; set; } = null!;
+        public string ConfirmPassword { get; set; } = null!; 
     }
 }

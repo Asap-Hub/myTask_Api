@@ -30,7 +30,7 @@ namespace myShop.Application.Command.User
         }
         public async Task<TblAccount> Handle(GetloginCommand request, CancellationToken cancellationToken)
         {  
-            FormattableString sql = $"EXEC  [dbo].[spLogUserIN] @userName = {request.userName}, @firstPassword = {request.firstPassword},@confirmPassword = {request.confirmPassword}";
+            FormattableString sql = $"EXEC [dbo].[spcAccountSignIn] @userName = {request.userName}, @firstPassword = {request.firstPassword},@confirmPassword = {request.confirmPassword}";
 
             var login = await _repository.Get(sql);
             if (login != null) { 

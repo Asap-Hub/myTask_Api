@@ -8,11 +8,11 @@ namespace myShop.Api.Controllers.user
     [ApiController]
     [Route("api/[controller]/[action]")]
 
-    public class createUserController : Controller
+    public class UserController : Controller
     {
         private readonly IMediator _mediator;
 
-        public createUserController(IMediator mediator)
+        public UserController(IMediator mediator)
         {
             _mediator = mediator;
         }

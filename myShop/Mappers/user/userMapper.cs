@@ -4,9 +4,9 @@ using myShop.Domain.Model;
 
 namespace myShop.Api.Mappers.user
 {
-    public class userMapperDto: Profile
+    public class userMapper: Profile
     {
-        public userMapperDto()
+        public userMapper()
         {
             CreateMap<CreateUserDto, TblAccount>().ReverseMap();
             CreateMap<loginDto, TblAccount>().ReverseMap();

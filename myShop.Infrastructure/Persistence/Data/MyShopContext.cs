@@ -52,6 +52,15 @@ public partial class MyShopContext : DbContext
                 .HasColumnName("userName");
         });
 
+
+        modelBuilder.Entity<TblMyTodo>(entity =>
+        {
+            entity.HasNoKey().ToTable("tblMyTodo");
+
+            entity.Property(e => e.TodoName).HasColumnName("TodoName");
+
+        });
+
         OnModelCreatingPartial(modelBuilder);
     }
 

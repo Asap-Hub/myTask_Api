@@ -17,7 +17,7 @@ public partial class MyShopContext : DbContext
     }
 
     public virtual DbSet<TblAccount> TblAccounts { get; set; }
-
+    public virtual DbSet<TblMyTodo> TblMyTodos { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Data Source=.; Database=myShop; Trusted_Connection=True; TrustServerCertificate=True;");
 
@@ -55,16 +55,12 @@ public partial class MyShopContext : DbContext
 
         modelBuilder.Entity<TblMyTodo>(entity =>
         {
-            entity.HasNoKey().ToTable("tblMyTodo");
-            entity.Property(e => e.TodoName).HasColumnName("TodoName");
-            entity.Property(e => e.StartTime).HasColumnName("StartTime");
-            entity.Property(e => e.EndTime).HasColumnName("EndTime");
-            entity.Property(e => e.Note).HasMaxLength(255).HasColumnName("Note");
-
+            entity.HasKey(e => e.Id);
+            entity.ToTable("tblMyTodo");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        //OnModelCreatingPartial(modelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

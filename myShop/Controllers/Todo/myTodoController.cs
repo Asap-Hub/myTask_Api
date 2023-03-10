@@ -21,12 +21,16 @@ namespace myShop.Api.Controllers.Todo
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> CreateMyTodo([FromBody] CreateTodoDto createDto) {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest(ModelState);
             }
             var createTodo = await _mediator.Send(new CreateMyTodoCommand { createDto = createDto});
-            return NoContent();
-        }
+            //if (createTodo > 0) {
+            //    var getresult = await _mediator.Send(new getMyTodoCommand {ID = createTodo });
+            //    return Ok(getresult);
+            //}
+            return Ok(createTodo);
+         }
     }
 }

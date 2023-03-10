@@ -19,9 +19,9 @@ namespace myShop.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<TEntity> Add(FormattableString sqlQuery)
+        public async Task<int> Add(FormattableString sqlQuery)
         {
-            List<TEntity> result = await _dbContext.Database.SqlQuery<TEntity>(sqlQuery).AsNoTracking().ToListAsync();
+            var result = await _dbContext.Database.SqlQuery<int>(sqlQuery).ToListAsync();
             await _dbContext.SaveChangesAsync();
             return result.FirstOrDefault()!;
 

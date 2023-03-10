@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace myShop.Application.Command.myTodo
 {
-    public class CreateMyTodoCommand: IRequest<TblMyTodo>
+    public class CreateMyTodoCommand: IRequest<int>
     { 
         public CreateTodoDto createDto { get; set; }
     }
 
-    public class CreateMyTodoCommandHandler : IRequestHandler<CreateMyTodoCommand, TblMyTodo>
+    public class CreateMyTodoCommandHandler : IRequestHandler<CreateMyTodoCommand, int>
     {
         private readonly IMapper _mapper;
         private readonly IGenericRepository<TblMyTodo> _repository;
@@ -26,7 +26,7 @@ namespace myShop.Application.Command.myTodo
             _mapper = mapper;
             _repository = repository;
         }
-        public async Task<TblMyTodo> Handle(CreateMyTodoCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateMyTodoCommand request, CancellationToken cancellationToken)
         {
            var dto = request.createDto;
             //var entity = new TblMyTodo();

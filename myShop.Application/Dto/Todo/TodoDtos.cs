@@ -24,7 +24,7 @@ namespace myShop.Application.Dto.Todo
         public string? Note { get; set; }
     }
 
-    public class getAll
+    public class getTodoDto
     {
         public int Id { get; set; }
         public string? TodoName { get; set; }

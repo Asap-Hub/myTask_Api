@@ -19,11 +19,13 @@ namespace myShop.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<int> Add(FormattableString sqlQuery)
+        public async Task<TEntity> Add(FormattableString sqlQuery)
         {
-            var result = await _dbContext.Database.SqlQuery<int>(sqlQuery).ToListAsync();
-            await _dbContext.SaveChangesAsync(); 
-            return result.FirstOrDefault();
+            List<TEntity> result = await _dbContext.Database.SqlQuery<TEntity>(sqlQuery).AsNoTracking().ToListAsync();
+            await _dbContext.SaveChangesAsync();
+            return result.FirstOrDefault()!;
+
+
         }
 
         public async Task<int> Delete(FormattableString sqlQuery)

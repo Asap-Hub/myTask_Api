@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 namespace myShop.Application.Command.User
 {
      
-    public class createUserCommand: IRequest<TblAccount>
+    public class createUserCommand: IRequest<int>
     {
         public CreateUserDto createUserDto { get; set; }
     }
 
 
-    public class createUserCommandHandler : IRequestHandler<createUserCommand, TblAccount>
+    public class createUserCommandHandler : IRequestHandler<createUserCommand, int>
     {
         private readonly IMapper _mapper;
         private readonly IGenericRepository<TblAccount> _repository;
@@ -28,7 +28,7 @@ namespace myShop.Application.Command.User
             _mapper = mapper;
             _repository = repository;
         }
-        public async Task<TblAccount> Handle(createUserCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(createUserCommand request, CancellationToken cancellationToken)
         {
             var dto = request.createUserDto;
             var entity = new TblAccount();

@@ -76,5 +76,22 @@ namespace myShop.Api.Controllers.Todo
             return NotFound();
         }
 
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> deleteTodo([FromRoute] int Id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var delete = await _mediator.Send(new DeleteMyTodoCommand { Id = Id });
+            if(delete == 0)
+            {
+                return Ok(delete);
+            }
+            return NotFound();
+        }
     }
 }

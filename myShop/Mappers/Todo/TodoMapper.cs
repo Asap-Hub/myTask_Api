@@ -10,7 +10,7 @@ namespace myShop.Api.Mappers.Todo
         {
             CreateMap<CreateTodoDto, TblMyTodo>().ReverseMap();
             CreateMap<UpdateTodoDto, TblMyTodo>().ReverseMap();
-            CreateMap<getAllTodoDto, TblMyTodo>().ReverseMap();
+            CreateMap<getTodoDto, TblMyTodo>().ReverseMap();
         }
     }
 }

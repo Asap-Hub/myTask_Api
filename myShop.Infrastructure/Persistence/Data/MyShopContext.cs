@@ -56,8 +56,10 @@ public partial class MyShopContext : DbContext
         modelBuilder.Entity<TblMyTodo>(entity =>
         {
             entity.HasNoKey().ToTable("tblMyTodo");
-
             entity.Property(e => e.TodoName).HasColumnName("TodoName");
+            entity.Property(e => e.StartTime).HasColumnName("StartTime");
+            entity.Property(e => e.EndTime).HasColumnName("EndTime");
+            entity.Property(e => e.Note).HasMaxLength(255).HasColumnName("Note");
 
         });
 

@@ -26,3 +26,17 @@ E:\Media\Code\Public\myShop\myShop.Domain\obj\Debug\net6.0\refint\myShop.Domain.
 E:\Media\Code\Public\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.pdb
 E:\Media\Code\Public\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.genruntimeconfig.cache
 E:\Media\Code\Public\myShop\myShop.Domain\obj\Debug\net6.0\ref\myShop.Domain.dll
+D:\Asap\Public\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.deps.json
+D:\Asap\Public\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.runtimeconfig.json
+D:\Asap\Public\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.dll
+D:\Asap\Public\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.pdb
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.csproj.AssemblyReference.cache
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.AssemblyInfoInputs.cache
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.AssemblyInfo.cs
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.csproj.CoreCompileInputs.cache
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.dll
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\refint\myShop.Domain.dll
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.pdb
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.genruntimeconfig.cache
+D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\ref\myShop.Domain.dll

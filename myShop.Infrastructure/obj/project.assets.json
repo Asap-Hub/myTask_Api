@@ -3856,27 +3856,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Innorik_PC19\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\INNORIK_PC19\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
+      "projectUniqueName": "E:\\Media\\Code\\Public\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
       "projectName": "myShop.Infrastructure",
-      "projectPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Innorik_PC19\\.nuget\\packages\\",
-      "outputPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Infrastructure\\obj\\",
+      "projectPath": "E:\\Media\\Code\\Public\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\INNORIK_PC19\\.nuget\\packages\\",
+      "outputPath": "E:\\Media\\Code\\Public\\myShop\\myShop.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Innorik_PC19\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\INNORIK_PC19\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3891,11 +3888,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Asap\\Public\\Backend\\myShop\\myShop.Application\\myShop.Application.csproj": {
-              "projectPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Application\\myShop.Application.csproj"
+            "E:\\Media\\Code\\Public\\myShop\\myShop.Application\\myShop.Application.csproj": {
+              "projectPath": "E:\\Media\\Code\\Public\\myShop\\myShop.Application\\myShop.Application.csproj"
             },
-            "D:\\Asap\\Public\\Backend\\myShop\\myShop.Domain\\myShop.Domain.csproj": {
-              "projectPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Domain\\myShop.Domain.csproj"
+            "E:\\Media\\Code\\Public\\myShop\\myShop.Domain\\myShop.Domain.csproj": {
+              "projectPath": "E:\\Media\\Code\\Public\\myShop\\myShop.Domain\\myShop.Domain.csproj"
             }
           }
         }
@@ -3935,7 +3932,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

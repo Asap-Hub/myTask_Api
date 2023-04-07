@@ -33,7 +33,7 @@ namespace myShop.Application.Command.myTodo
 
             var data = _mapper.Map<TblMyTodo>(dto);
 
-            FormattableString sql = $"EXEC [dbo].[spcCreateMyToDo] @TodoName = {data.TodoName}, @StartDate = {data.StartTime}, @EndDate = {data.EndTime}, @Note = {data.Note}";
+            FormattableString sql = $"EXEC [dbo].[spcCreateMyToDo] @Title = {data.Title}, @StartTime = {data.StartDate}, @EndDate = {data.EndDate}, @Note = {data.Note}";
             var createResponse = await _repository.Add(sql);
             return createResponse;
         }

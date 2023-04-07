@@ -48,7 +48,7 @@ namespace myShop.Api.Controllers.Todo
 
             var getAllResponse = await _mediator.Send(new GetAllMyTodoCommand { });
 
-            if(getAllResponse.Count >0) {
+            if(getAllResponse.Count > 0) {
                 return Ok(getAllResponse);
             }
             return NotFound();

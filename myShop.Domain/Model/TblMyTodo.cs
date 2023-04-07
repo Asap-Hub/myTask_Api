@@ -8,12 +8,15 @@ namespace myShop.Domain.Model
 {
     public partial class TblMyTodo
     {
-        public int Id { get; set; }
-        public string? TodoName { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public int TodoId { get; set; }
+
+        public string? Title { get; set; }
+
         public string? Note { get; set; }
 
+        public DateTime? StartDate { get; set; } = DateTime.Now;
+
+        public DateTime EndDate { get; set; }
 
     }
 }

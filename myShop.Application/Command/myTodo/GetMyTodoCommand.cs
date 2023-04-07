@@ -28,7 +28,7 @@ namespace myShop.Application.Command.myTodo
         }
         public async Task<getTodoDto> Handle(GetMyTodoCommand request, CancellationToken cancellationToken)
         {
-            FormattableString getResponse = $"EXEC [dbo].[spcGetMyToDo] @Id = {request.ID}";
+            FormattableString getResponse = $"EXEC [dbo].[spcGetMyToDo] @TodoId = {request.ID}";
             var get = await _repository.Get(getResponse);
             var getData = _mapper.Map<getTodoDto>(get);
             return getData;

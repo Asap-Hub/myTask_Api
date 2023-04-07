@@ -55,7 +55,7 @@ public partial class MyShopContext : DbContext
 
         modelBuilder.Entity<TblMyTodo>(entity =>
         {
-            entity.HasKey(e => e.Id);
+            entity.HasKey(e => e.TodoId);
             entity.ToTable("tblMyTodo");
         });
 

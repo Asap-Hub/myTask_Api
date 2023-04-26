@@ -19,7 +19,7 @@ public partial class MyShopContext : DbContext
     public virtual DbSet<TblAccount> TblAccounts { get; set; }
     public virtual DbSet<TblMyTodo> TblMyTodos { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=.; Database=myShop; Trusted_Connection=True; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-5ILLV6G\\ASAP; Database=myShop; Trusted_Connection=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

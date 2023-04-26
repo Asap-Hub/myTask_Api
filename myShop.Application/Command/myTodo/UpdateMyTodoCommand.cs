@@ -30,7 +30,7 @@ namespace myShop.Application.Command.myTodo
         {
             var dto = request.updateDto;
             var data =  _mapper.Map<TblMyTodo>(dto);
-            FormattableString sql = $"EXEC  [dbo].[spcUpdateMyToDo] @Title = {data.Title}, @StartDate = {data.StartDate}, @EndDate = {data.EndDate}, @Note = {data.Note}, @TodoId = {data.TodoId}";
+            FormattableString sql = $"EXEC  [dbo].[spcUpdateMyTod] @Title = {data.Title},@Note = {data.Note},@Status = {data.Status}, @startDate = {data.StartDate}, @endDate = {data.EndDate},  @todoId = {data.TodoId}";
 
             var updateData = await _repository.Update(sql);
             return updateData;

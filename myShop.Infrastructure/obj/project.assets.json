@@ -3856,26 +3856,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Innorik_PC19\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {},
+    "C:\\Users\\ASAP\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
+      "projectUniqueName": "D:\\Project\\myTask\\Backend\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
       "projectName": "myShop.Infrastructure",
-      "projectPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Innorik_PC19\\.nuget\\packages\\",
-      "outputPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Infrastructure\\obj\\",
+      "projectPath": "D:\\Project\\myTask\\Backend\\myShop\\myShop.Infrastructure\\myShop.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\ASAP\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\myTask\\Backend\\myShop\\myShop.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Innorik_PC19\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
+        "C:\\Users\\ASAP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3883,19 +3880,19 @@
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Asap\\Public\\Backend\\myShop\\myShop.Application\\myShop.Application.csproj": {
-              "projectPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Application\\myShop.Application.csproj"
+            "D:\\Project\\myTask\\Backend\\myShop\\myShop.Application\\myShop.Application.csproj": {
+              "projectPath": "D:\\Project\\myTask\\Backend\\myShop\\myShop.Application\\myShop.Application.csproj"
             },
-            "D:\\Asap\\Public\\Backend\\myShop\\myShop.Domain\\myShop.Domain.csproj": {
-              "projectPath": "D:\\Asap\\Public\\Backend\\myShop\\myShop.Domain\\myShop.Domain.csproj"
+            "D:\\Project\\myTask\\Backend\\myShop\\myShop.Domain\\myShop.Domain.csproj": {
+              "projectPath": "D:\\Project\\myTask\\Backend\\myShop\\myShop.Domain\\myShop.Domain.csproj"
             }
           }
         }

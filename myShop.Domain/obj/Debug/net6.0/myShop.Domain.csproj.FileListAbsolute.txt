@@ -40,3 +40,17 @@ D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\refint\myShop.Domai
 D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.pdb
 D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.genruntimeconfig.cache
 D:\Asap\Public\Backend\myShop\myShop.Domain\obj\Debug\net6.0\ref\myShop.Domain.dll
+D:\Project\myTask\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.deps.json
+D:\Project\myTask\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.runtimeconfig.json
+D:\Project\myTask\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.dll
+D:\Project\myTask\Backend\myShop\myShop.Domain\bin\Debug\net6.0\myShop.Domain.pdb
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.csproj.AssemblyReference.cache
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.AssemblyInfoInputs.cache
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.AssemblyInfo.cs
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.csproj.CoreCompileInputs.cache
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.dll
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\refint\myShop.Domain.dll
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.pdb
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\myShop.Domain.genruntimeconfig.cache
+D:\Project\myTask\Backend\myShop\myShop.Domain\obj\Debug\net6.0\ref\myShop.Domain.dll

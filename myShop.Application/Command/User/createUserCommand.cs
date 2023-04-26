@@ -33,7 +33,7 @@ namespace myShop.Application.Command.User
             var dto = request.createUserDto;
             var entity = new TblAccount();
             var data = _mapper.Map(dto, entity);
-            FormattableString sql = $"EXEC [dbo].[spcAccountCreateAccount] @firstName = {data.FirstName}, @secondName = {data.SecondName}, @userName = {data.UserName}, @email = {data.email}, @gender = {data.Gender}, @countryName = {data.CountryName}, @firstPassword = {data.FirstPassword}, @confirmPassword = {data.ConfirmPassword}";
+            FormattableString sql = $"EXEC [dbo].[spcCreateAccount] @firstName = {data.FirstName}, @secondName = {data.SecondName}, @userName = {data.UserName}, @email = {data.email}, @gender = {data.Gender}, @countryName = {data.CountryName}, @firstPassword = {data.FirstPassword}, @confirmPassword = {data.ConfirmPassword}";
 
             var result = await _repository.Add(sql);
               return result;

@@ -11,10 +11,11 @@ namespace myShop.Domain.Model
         public int TodoId { get; set; }
 
         public string? Title { get; set; }
+        public string? Status { get; set; }
 
         public string? Note { get; set; }
 
-        public DateTime? StartDate { get; set; } = DateTime.Now;
+        public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
 

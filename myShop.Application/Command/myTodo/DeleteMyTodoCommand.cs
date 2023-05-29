@@ -26,9 +26,9 @@ namespace myShop.Application.Command.myTodo
         }
         public async Task<int> Handle(DeleteMyTodoCommand request, CancellationToken cancellationToken)
         {
-            FormattableString sql = $"EXEC [dbo].[spcDeleteMyToDo] @Id = {request.Id}";
-            var deleteData = await _repository.Delete(sql);
-            return deleteData;
+            FormattableString sql = $"EXEC [dbo].[spcDeleteMyToDo] @todoId = {request.Id}";
+            return await _repository.Delete(sql);
+             
         }
     }
 }

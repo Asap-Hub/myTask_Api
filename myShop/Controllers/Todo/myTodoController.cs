@@ -96,12 +96,14 @@ namespace myShop.Api.Controllers.Todo
             if(getTodo != null)
             {
                 var updateData = await _mediator.Send(new UpdateMyTodoCommand { updateDto = updateDto });
+                 
                 return NoContent();
+               
             }
             return NotFound();
         }
 
-        [HttpDelete]
+        [HttpDelete("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> deleteTodo([FromRoute] int Id)
@@ -112,11 +114,11 @@ namespace myShop.Api.Controllers.Todo
             }
 
             var delete = await _mediator.Send(new DeleteMyTodoCommand { Id = Id });
-            if(delete == 0)
+            if(delete == null)
             {
-                return Ok(delete);
+                return NotFound();
             }
-            return NotFound();
+            return NoContent();
         }
     }
 }

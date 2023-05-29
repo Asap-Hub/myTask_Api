@@ -28,9 +28,11 @@ namespace myShop.Application.Command.myTodo
         }
         public async Task<int> Handle(UpdateMyTodoCommand request, CancellationToken cancellationToken)
         {
+            var entity = new TblMyTodo();
             var dto = request.updateDto;
-            var data =  _mapper.Map<TblMyTodo>(dto);
-            FormattableString sql = $"EXEC  [dbo].[spcUpdateMyTod] @Title = {data.Title},@Note = {data.Note},@Status = {data.Status}, @startDate = {data.StartDate}, @endDate = {data.EndDate},  @todoId = {data.TodoId}";
+            var data =  _mapper.Map(dto, entity);
+
+            FormattableString sql = $"EXEC  [dbo].[spcUpdateMyTodo] @Title = {data.Title},@Note = {data.Note},@Status = {data.Status}, @startDate = {data.StartDate}, @endDate = {data.EndDate},  @todoId = {data.TodoId}";
 
             var updateData = await _repository.Update(sql);
             return updateData;

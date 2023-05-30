@@ -58,9 +58,6 @@ public partial class MyShopContext : DbContext
             entity.HasKey(e => e.TodoId);
             entity.ToTable("tblMyTodo");
         });
-
-        //OnModelCreatingPartial(modelBuilder);
-    }
-
-    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+         
+    } 
 }

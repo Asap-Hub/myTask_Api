@@ -29,11 +29,11 @@ namespace myShop.Application.Command.myTodo
         public async Task<int> Handle(CreateMyTodoCommand request, CancellationToken cancellationToken)
         {
            var dto = request.createDto;
-            //var entity = new TblMyTodo();
+            var entity = new TblMyTodo();
 
-            var data = _mapper.Map<TblMyTodo>(dto);
+            var data = _mapper.Map(dto, entity);
 
-            FormattableString sql = $"EXEC [dbo].[spcCreateMyToDo] @Title = {data.Title}, @StartTime = {data.StartDate}, @EndDate = {data.EndDate}, @Note = {data.Note}";
+            FormattableString sql = $"EXEC  [dbo].[spcCreateMyToDo] @Title = {data.Title}, @Note = {data.Note}, @StartDate = {data.StartDate}, @EndDate = {data.EndDate}";
             var createResponse = await _repository.Add(sql);
             return createResponse;
         }

@@ -20,6 +20,8 @@ namespace myShop.Api.Controllers.Todo
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> CreateMyTodo([FromBody] CreateTodoDto createDto) {
             if (!ModelState.IsValid)
             {
@@ -38,6 +40,7 @@ namespace myShop.Api.Controllers.Todo
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> getAllMyTodo()
         {
             if(!ModelState.IsValid)
@@ -55,11 +58,33 @@ namespace myShop.Api.Controllers.Todo
             
         }
 
+        //getting one result
+        [HttpGet("${todoId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetMyTodo([FromRoute] int todoId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var getData = await _mediator.Send(new GetMyTodoCommand { ID = todoId });
+
+            if(getData != null)
+            {
+                return Ok(getData);
+            }
+            return NotFound();
+        }
 
         //updating record
-        [HttpPut]
+        [HttpPut("${todoId}")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> updateMyTodo([FromRoute] int Id, [FromBody] UpdateTodoDto updateDto)
         {
             if (!ModelState.IsValid)
@@ -76,8 +101,10 @@ namespace myShop.Api.Controllers.Todo
             return NotFound();
         }
 
-        [HttpDelete]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpDelete("${todoId}")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> deleteTodo([FromRoute] int Id)
         {
@@ -87,7 +114,7 @@ namespace myShop.Api.Controllers.Todo
             }
 
             var delete = await _mediator.Send(new DeleteMyTodoCommand { Id = Id });
-            if(delete == 0)
+            if(delete > 0)
             {
                 return Ok(delete);
             }

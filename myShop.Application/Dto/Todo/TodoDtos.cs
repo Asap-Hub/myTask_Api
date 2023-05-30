@@ -12,9 +12,9 @@ namespace myShop.Application.Dto.Todo
 
         public string? Note { get; set; }
 
-        public DateTime? StartTime { get; set; } = DateTime.Now;
+        public DateTime? StartDate { get; set; } 
 
-        public DateTime EndTime { get; set; }
+        public DateTime EndDate { get; set; }
     }
 
 
@@ -26,9 +26,9 @@ namespace myShop.Application.Dto.Todo
 
         public string? Note { get; set; }
 
-        public DateTime? StartTime { get; set; } = DateTime.Now;
+        public DateTime? StartDate { get; set; }
 
-        public DateTime EndTime { get; set; }
+        public DateTime EndDate { get; set; }
     }
 
     public class getTodoDto
@@ -39,8 +39,8 @@ namespace myShop.Application.Dto.Todo
 
         public string? Note { get; set; }
 
-        public DateTime? StartTime { get; set; } = DateTime.Now;
+        public DateTime? StartDate { get; set; }
 
-        public DateTime EndTime { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

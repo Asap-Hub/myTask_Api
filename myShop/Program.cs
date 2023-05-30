@@ -1,8 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using myShop.Application.Service;
 using myShop.Infrastructure.Persistence.Data;
 using myShop.Infrastructure.Services;
+using myShop.Infrastructure.Utility;
+using System.Configuration;
 using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,10 +22,39 @@ builder.Services.AddCors(
     ));
  
 
+//configuration
+builder.Services.Configure<ConnectionString>(builder.Configuration.GetSection(nameof(ConnectionString)));
+
 //connection string
 builder.Services.AddDbContext<MyShopContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("localConnection"));
+}, ServiceLifetime.Transient);
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
+    options.Password.RequireUppercase = true;
+    options.Password.RequireDigit = true;
+    options.SignIn.RequireConfirmedEmail = true;
+
+}).AddEntityFrameworkStores<MyShopContext>().AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(options =>
+{
+
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ClockSkew = TimeSpan.Zero,
+        ValidIssuer = builder.Configuration["JWT:Issuer"], 
+        ValidAudience = builder.Configuration["JWT:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+    };
 });
 
 // Add services to the container.

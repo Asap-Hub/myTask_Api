@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\myShop.Infrastructure",
+    "\\myShop.Infrastructure\\Persistence",
+    "\\myShop.Infrastructure\\Persistence\\Data"
   ],
   "SelectedNode": "\\myShop.sln",
   "PreviewInSolutionExplorer": false

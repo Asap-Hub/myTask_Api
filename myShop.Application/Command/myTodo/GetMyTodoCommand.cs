@@ -13,7 +13,7 @@ namespace myShop.Application.Command.myTodo
 {
     public class GetMyTodoCommand:IRequest<getTodoDto>
     {
-        public int ID { get; set; } 
+        public int? ID { get; set; } 
     }
 
     public class GetMyTodoCommandHandler : IRequestHandler<GetMyTodoCommand, getTodoDto>

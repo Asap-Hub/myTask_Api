@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using myShop.Application.Command.myTodo;
@@ -8,6 +9,7 @@ namespace myShop.Api.Controllers.Todo
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize(policy:"AdminOnly")]
     public class myTodoController : ControllerBase
     {
         private readonly IMediator _mediator;

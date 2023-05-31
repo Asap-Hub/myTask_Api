@@ -316,3 +316,9 @@ D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\refint\myShop.Api.dll
 D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\myShop.Api.pdb
 D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\myShop.Api.genruntimeconfig.cache
 D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\ref\myShop.Api.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

@@ -58,6 +58,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
+//for only allowing admins to have access to the account.
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly",

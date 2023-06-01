@@ -1,8 +1,11 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using myShop.Application.Command.User;
 using myShop.Application.Dto.User;
+using myShop.Domain.Model;
+using myShop.Infrastructure.Services;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -15,12 +18,18 @@ namespace myShop.Api.Controllers.user
     public class UserController : Controller
     {
         private readonly IMediator _mediator;
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration _configuration;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IEmailServices _emailServices;
 
-        public UserController(IMediator mediator, IConfiguration configuration)
+        public UserController(IMediator mediator, IConfiguration configuration, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IEmailServices emailServices )
         {
             _mediator = mediator;
-            this.configuration = configuration;
+           _configuration = configuration;
+           _userManager = userManager;
+           _signInManager = signInManager;
+            _emailServices = emailServices;
         }
 
         //testing jwt 
@@ -49,9 +58,123 @@ namespace myShop.Api.Controllers.user
             return Unauthorized(ModelState);
         }
 
+
+        //testing creating using userManager
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> createUserUsingManager([FromBody] TblUser user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var dto = new IdentityUser
+            {
+                Email = user.Email,
+                UserName = user.PassWord
+
+            };
+
+            var createUser = await _userManager.CreateAsync(dto, user.PassWord);
+            if(createUser.Succeeded)
+            {
+                var confirmEmail = await _userManager.GenerateEmailConfirmationTokenAsync(dto);
+                // return Ok( value: new {
+                //     User = dto.Id,
+                //     Token = confirmEmail,
+                //});
+                var verificationLink = Url.PageLink(pageName: "SOME ROUTE",
+                             values: new
+                             {
+                                 User = dto.Id,
+                                 Token = confirmEmail,
+                             }
+                    );
+
+                await _emailServices.sendEmailAsync("ab@gmail.com",
+                    user.Email!,
+                    "Please confirm your email",
+                    $"please click on this link to confirms your email address:{verificationLink}"
+                    );
+
+            }
+            else
+            {
+                foreach(var error in createUser.Errors)
+                {
+                    ModelState.AddModelError("Registration", error.Description);
+                }
+            }
+            return BadRequest(ModelState);
+
+        }
+
+
+
+        //loging user out
+        [HttpPost]
+        public async Task<IActionResult> logOut()
+        {
+           await _signInManager.SignOutAsync();
+            return Ok();
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> confirmAccount( string userID, string Token )
+        {
+            var findUser = await _userManager.FindByIdAsync(userID);
+
+            if(findUser != null)
+            {
+                var result = await _userManager.ConfirmEmailAsync(findUser, Token);
+                if (result.Succeeded)
+                {
+                    return Ok (value: new Message { message = "Email Confirmation was successful" });
+                   
+                }
+            }
+            return BadRequest(error: new Message { message = "Email Confirmation was successful" });
+        }
+
+
+        //for logging in using a signManager
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPost]
+        public  async Task<IActionResult> LogUserIn([FromBody] TblUser user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            
+
+            var signUserIn = await _signInManager.PasswordSignInAsync(user.Email, user.PassWord,isPersistent:false, false);
+
+            if(signUserIn.Succeeded)
+            {
+                return Ok();
+            }
+            else
+            {
+
+                if (signUserIn.IsLockedOut)
+                {
+                    ModelState.AddModelError("Alert", "You are LockedOut");
+                }
+                else
+                {
+                    ModelState.AddModelError("Error", "Failed to login");
+                }
+            }
+            return BadRequest();
+        }
+
         private string CreateToken(IEnumerable<Claim> claims, DateTime expiresAt)
         {
-            var secreteKey = Encoding.UTF8.GetBytes(configuration.GetValue<string>("JWT:Key")); 
+            var secreteKey = Encoding.UTF8.GetBytes(_configuration.GetValue<string>("JWT:Key")); 
 
             var jwt = new JwtSecurityToken(
                 claims: claims,
@@ -104,9 +227,25 @@ namespace myShop.Api.Controllers.user
     }
 
 
+    public class Message
+    {
+        public string message { get; set; }
+    }
+
     public class Credential
     {
         public string? userName { get; set; } = null!;
         public string? Password { get; set; } = null!;
+    }
+    public class findUser
+    {
+        public string? userID { get; set; } = null!;
+        public string? Token { get; set; } = null!;
+    }
+
+    public class ConfirmEmailMessage
+    {
+        public int? UserID { get; set; }
+        public string? Token { get; set; }
     }
 }

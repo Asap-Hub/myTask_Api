@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using myShop.Application.Service;
+using Microsoft.IdentityModel.Tokens; 
 using myShop.Domain.Model;
 using myShop.Infrastructure.Persistence.Data;
 using myShop.Infrastructure.Services;

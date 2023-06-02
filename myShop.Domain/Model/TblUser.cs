@@ -11,6 +11,7 @@ namespace myShop.Domain.Model
     {
         public string? Email {  get; set; }  
         public string? PassWord {  get; set; }  
+        public bool RememberMe {  get; set; }  
 
     }
 

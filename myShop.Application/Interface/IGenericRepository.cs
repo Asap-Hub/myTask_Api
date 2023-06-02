@@ -16,8 +16,6 @@ namespace myShop.Application.Interface
 
         Task<TEntity> Get(FormattableString sqlQuery);
 
-        //Task<int> GetCount(FormattableString sqlQuery);
-
         Task<IReadOnlyList<TEntity>> GetAll(FormattableString sqlQuery);
     }
 }

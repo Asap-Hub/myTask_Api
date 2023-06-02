@@ -30,7 +30,7 @@ namespace myShop.Infrastructure.Services
                     _SMTPSettings.Value.Password
                     );
 
-                await emailClient.SendMailAsync(message);
+              await emailClient.SendMailAsync(message);
             }
         }
     }

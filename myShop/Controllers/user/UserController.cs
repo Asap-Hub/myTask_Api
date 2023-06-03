@@ -23,6 +23,8 @@ namespace myShop.Api.Controllers.user
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IEmailServices _emailServices;
 
+        
+
         public UserController(IMediator mediator, IConfiguration configuration, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IEmailServices emailServices )
         {
             _mediator = mediator;
@@ -120,6 +122,8 @@ namespace myShop.Api.Controllers.user
             return Ok();
         }
 
+
+        //use to confirm account of user
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> confirmAccount( string userID, string Token )
@@ -139,7 +143,7 @@ namespace myShop.Api.Controllers.user
         }
 
 
-        //for logging in using a signManager
+        //for loging in using a user
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         public  async Task<IActionResult> LogUserIn([FromBody] TblUser user)
@@ -149,16 +153,31 @@ namespace myShop.Api.Controllers.user
                 return BadRequest(ModelState);
             }
 
-            
-
-            var signUserIn = await _signInManager.PasswordSignInAsync(user.Email, user.PassWord,isPersistent:false, false);
+            var signUserIn = await _signInManager.PasswordSignInAsync(
+                user.Email,
+                user.PassWord,
+                user.RememberMe, 
+                false);
 
             if(signUserIn.Succeeded)
             {
-                return Ok();
+
+                //you can use createAtRoute and pass the route to home page 
+                //use claims to assign to other pages
+                return RedirectToAction(nameof(Index));
             }
             else
             {
+                if (signUserIn.RequiresTwoFactor)
+                {
+                    return RedirectToPage("/LoginUsingTwoFactor",
+                        new
+                        {
+                            Email = user.Email,
+                            RememberMe = user.RememberMe,
+                        }
+                        );
+                }
 
                 if (signUserIn.IsLockedOut)
                 {
@@ -170,6 +189,71 @@ namespace myShop.Api.Controllers.user
                 }
             }
             return BadRequest();
+        }
+
+
+
+        //for using two factor loging
+        public EmailMFA emailMFA { get; set; }
+
+        [HttpGet]
+        public async Task<IActionResult> LoginUsingTwoFactor(string Email, bool RememberMe)
+        {
+
+
+            //generate the authentication code
+            var findUser = await _userManager.FindByEmailAsync(Email);
+
+            emailMFA.securityCode = string.Empty;
+            emailMFA.RememberMe = RememberMe;
+
+            var getSecurityCode = await _userManager.GenerateTwoFactorTokenAsync(findUser, "Email");
+
+            //send the authentication code
+
+               await _emailServices.sendEmailAsync(
+                "ab@gmail.com",
+                Email,
+                "Asap-Hub OTP Code",
+                $"use this otp to login into your app.{getSecurityCode}"
+                );
+            return Ok();
+             
+        }
+
+
+        //verifing the user using two face
+
+        [HttpPost]  
+        public async Task<IActionResult> verifyTwoFactorLogging([FromBody] EmailMFA emailMFA)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _signInManager.TwoFactorSignInAsync("Email", emailMFA.securityCode, emailMFA.RememberMe, false);
+
+
+            if (result.Succeeded)
+            {
+
+                //you can use createAtRoute and pass the route to home page 
+                //use claims to assign to other pages
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            { 
+                if (result.IsLockedOut)
+                {
+                    ModelState.AddModelError("Login2FA", "You are LockedOut");
+                }
+                else
+                {
+                    ModelState.AddModelError("Login2FA", "Failed to login");
+                }
+            } 
+            return Ok();
         }
 
         private string CreateToken(IEnumerable<Claim> claims, DateTime expiresAt)
@@ -186,6 +270,9 @@ namespace myShop.Api.Controllers.user
 
             return new JwtSecurityTokenHandler().WriteToken(jwt);   
         }
+
+
+       
 
         //create user
         [HttpPost]
@@ -226,6 +313,12 @@ namespace myShop.Api.Controllers.user
         }
     }
 
+
+    public class EmailMFA
+    {
+        public string? securityCode { get; set; }
+        public bool RememberMe { get; set; }
+    }
 
     public class Message
     {

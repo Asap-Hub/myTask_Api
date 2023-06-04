@@ -316,6 +316,7 @@ D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\refint\myShop.Api.dll
 D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\myShop.Api.pdb
 D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\myShop.Api.genruntimeconfig.cache
 D:\Asap\Public\Backend\myShop\myShop\obj\Debug\net6.0\ref\myShop.Api.dll
+<<<<<<< HEAD
 D:\Project\myTask\Backend\myShop\myShop\bin\Debug\net6.0\appsettings.Development.json
 D:\Project\myTask\Backend\myShop\myShop\bin\Debug\net6.0\appsettings.json
 D:\Project\myTask\Backend\myShop\myShop\bin\Debug\net6.0\myShop.Api.exe
@@ -422,3 +423,13 @@ D:\Project\myTask\Backend\myShop\myShop\obj\Debug\net6.0\refint\myShop.Api.dll
 D:\Project\myTask\Backend\myShop\myShop\obj\Debug\net6.0\myShop.Api.pdb
 D:\Project\myTask\Backend\myShop\myShop\obj\Debug\net6.0\myShop.Api.genruntimeconfig.cache
 D:\Project\myTask\Backend\myShop\myShop\obj\Debug\net6.0\ref\myShop.Api.dll
+=======
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+D:\Asap\Public\Backend\myShop\myShop\bin\Debug\net6.0\Microsoft.AspNet.Identity.EntityFramework.dll
+>>>>>>> 0dc949e46323f701edb56f013d346b71955a6221

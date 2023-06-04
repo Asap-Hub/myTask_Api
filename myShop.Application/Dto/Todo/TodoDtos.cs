@@ -15,7 +15,7 @@ namespace myShop.Application.Dto.Todo
 
         public DateTime? StartDate { get; set; } 
 
-        public DateTime? EndDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 
 
@@ -30,7 +30,7 @@ namespace myShop.Application.Dto.Todo
 
         public DateTime? StartDate { get; set; }
 
-        public DateTime? EndDate { get; set; }
+        public DateTime EndTime { get; set; }
     }
 
     public class getTodoDto
@@ -44,6 +44,6 @@ namespace myShop.Application.Dto.Todo
 
         public DateTime? StartDate { get; set; }
 
-        public DateTime? EndDate { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

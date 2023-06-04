@@ -1,23 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using myShop.Domain.Model;
+using myShop.Infrastructure.Utility;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace myShop.Infrastructure.Persistence.Data;
 
 public partial class MyShopContext : DbContext
 {
-    public MyShopContext()
-    {
-    }
+    private readonly IOptions<ConnectionString> _connectionString;
 
-    public MyShopContext(DbContextOptions<MyShopContext> options)
+    protected IHttpContextAccessor _httpContextAccessor { get; set; }
+    //public MyShopContext()
+    //{
+    //}
+
+    public MyShopContext(DbContextOptions<MyShopContext> options, IHttpContextAccessor httpContextAccessor, IOptions<ConnectionString> connectinString)
         : base(options)
     {
+        _connectionString = connectinString;
+        _httpContextAccessor = httpContextAccessor; 
     }
 
     public virtual DbSet<TblAccount> TblAccounts { get; set; }
     public virtual DbSet<TblMyTodo> TblMyTodos { get; set; }
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //    => optionsBuilder.UseSqlServer("");
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Data Source=DESKTOP-5ILLV6G\\ASAP; Database=myShop; Trusted_Connection=True; TrustServerCertificate=True;");
 
@@ -58,9 +70,6 @@ public partial class MyShopContext : DbContext
             entity.HasKey(e => e.TodoId);
             entity.ToTable("tblMyTodo");
         });
-
-        //OnModelCreatingPartial(modelBuilder);
-    }
-
-    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+         
+    } 
 }

@@ -15,7 +15,7 @@ namespace myShop.Domain.Model
 
         public string? Note { get; set; }
 
-        public DateTime? StartDate { get; set; }
+        public DateTime? StartDate { get; set; } 
 
         public DateTime? EndDate { get; set; }
 

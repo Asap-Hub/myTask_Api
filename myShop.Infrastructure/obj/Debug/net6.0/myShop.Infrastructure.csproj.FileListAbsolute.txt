@@ -44,6 +44,7 @@ D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infr
 D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infrastructure.dll
 D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\refint\myShop.Infrastructure.dll
 D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infrastructure.pdb
+<<<<<<< HEAD
 D:\Project\myTask\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.deps.json
 D:\Project\myTask\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.runtimeconfig.json
 D:\Project\myTask\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.dll
@@ -63,3 +64,16 @@ D:\Project\myTask\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\refint\m
 D:\Project\myTask\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infrastructure.pdb
 D:\Project\myTask\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infrastructure.genruntimeconfig.cache
 D:\Project\myTask\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\ref\myShop.Infrastructure.dll
+=======
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.deps.json
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.runtimeconfig.json
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.dll
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Infrastructure.pdb
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Application.dll
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Domain.dll
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Application.pdb
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\bin\Debug\net6.0\myShop.Domain.pdb
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infrastructure.csproj.CopyComplete
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\myShop.Infrastructure.genruntimeconfig.cache
+D:\Asap\Public\Backend\myShop\myShop.Infrastructure\obj\Debug\net6.0\ref\myShop.Infrastructure.dll
+>>>>>>> 0dc949e46323f701edb56f013d346b71955a6221
